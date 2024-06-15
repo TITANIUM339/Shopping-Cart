@@ -1,0 +1,38 @@
+{
+    "name": "shopping-cart",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "test": "vitest",
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+        "write": "prettier . --write",
+        "check": "prettier . --check",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "phosphor-react": "^1.4.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.23.1"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^6.4.6",
+        "@testing-library/react": "^16.0.0",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/react": "^18.2.66",
+        "@types/react-dom": "^18.2.22",
+        "@vitejs/plugin-react": "^4.2.1",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-react": "^7.34.1",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.6",
+        "jsdom": "^24.1.0",
+        "prettier": "3.3.2",
+        "vite": "^5.2.0",
+        "vitest": "^1.6.0"
+    }
+}
