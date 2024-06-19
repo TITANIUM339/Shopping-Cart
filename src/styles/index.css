@@ -1,3 +1,20 @@
+@font-face {
+    font-family: Playwrite;
+    src: url("../assets/Playwrite_AU_VIC/PlaywriteAUVIC-VariableFont_wght.ttf");
+}
+
 :root {
     font-family: sans-serif;
+}
+
+#root {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    background-color: #fafafa;
+}
+
+:any-link {
+    color: inherit;
+    text-decoration: none;
 }

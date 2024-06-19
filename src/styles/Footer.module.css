@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 20px;
+}
+
+.github {
+    transition: transform 200ms;
+    width: 18px;
+    height: 18px;
+}
+
+.github:hover {
+    transform: scale(1.2);
+}

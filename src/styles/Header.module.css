@@ -1,0 +1,72 @@
+.header {
+    --background: white;
+    --color: black;
+    --hover: #a1a1aa;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding: 20px;
+    background-color: var(--background);
+    color: var(--color);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.199);
+    z-index: 1;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Playwrite;
+    text-align: center;
+}
+
+.navGroup1 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    gap: 20px;
+}
+
+.navGroup2 {
+    position: relative;
+}
+
+.home:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+    color: var(--hover);
+}
+
+.shop {
+    composes: home;
+}
+
+.cart:hover {
+    color: var(--hover);
+}
+
+.cartItemsCount {
+    pointer-events: none;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}

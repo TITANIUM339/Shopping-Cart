@@ -1,0 +1,31 @@
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.welcome {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    font-family: Playwrite;
+}
+
+.shop {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    background-color: #27272a;
+    color: white;
+}
+
+.shop:hover {
+    background-color: #a1a1aa;
+}
