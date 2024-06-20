@@ -8,6 +8,8 @@ import "./styles/reset.css";
 import Home from "./routes/Home.jsx";
 import Shop from "./routes/Shop.jsx";
 import Cart from "./routes/Cart.jsx";
+import Products from "./components/Products.jsx";
+import Product from "./components/Product.jsx";
 
 const router = createBrowserRouter([
     {
@@ -16,8 +18,31 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             { index: true, element: <Home /> },
-            { path: "shop", element: <Shop /> },
+            {
+                path: "shop",
+                element: <Shop />,
+                children: [
+                    { index: true, element: <Products /> },
+                    {
+                        path: "jewelry",
+                        element: <Products category="jewelry" />,
+                    },
+                    {
+                        path: "electronics",
+                        element: <Products category="electronics" />,
+                    },
+                    {
+                        path: "mens-clothing",
+                        element: <Products category="mens-clothing" />,
+                    },
+                    {
+                        path: "womens-clothing",
+                        element: <Products category="womens-clothing" />,
+                    },
+                ],
+            },
             { path: "cart", element: <Cart /> },
+            { path: "product/:id", element: <Product /> },
         ],
     },
 ]);
