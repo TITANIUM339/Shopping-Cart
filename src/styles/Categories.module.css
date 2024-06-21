@@ -1,0 +1,28 @@
+.container {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.199);
+    padding: 10px;
+}
+
+.linksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.link {
+    background-color: #27272a;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+
+.link:hover {
+    background-color: #a1a1aa;
+}
+
+.active {
+    background-color: #a1a1aa;
+}
