@@ -1,5 +1,4 @@
 .container {
-    height: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -9,13 +8,8 @@
 
 .categories {
     width: 200px;
-    background-color: white;
-    border-radius: 5px;
 }
 
 .products {
     flex: 1;
-    min-width: 400px;
-    background-color: white;
-    border-radius: 5px;
 }
