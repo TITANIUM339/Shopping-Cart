@@ -1,7 +1,7 @@
 import { ShoppingCartSimple } from "phosphor-react";
 import { Link } from "react-router-dom";
 import classes from "../styles/Header.module.css";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 
 function Header({ cartItemsCount }) {
     return (
