@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
-import "@smastrom/react-rating/style.css";
 import classes from "../styles/ProductCard.module.css";
 import { ShoppingCartSimple } from "phosphor-react";
 

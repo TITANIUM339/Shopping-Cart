@@ -5,6 +5,7 @@ import ErrorPage from "./routes/ErrorPage.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./styles/index.css";
 import "./styles/reset.css";
+import "@smastrom/react-rating/style.css";
 import Home from "./routes/Home.jsx";
 import Shop from "./routes/Shop.jsx";
 import Cart from "./routes/Cart.jsx";
