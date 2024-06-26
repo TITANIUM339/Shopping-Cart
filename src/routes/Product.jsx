@@ -1,18 +1,21 @@
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import { Spinner, Plus, Minus, ShoppingCartSimple } from "phosphor-react";
 import { useEffect, useState } from "react";
 import { Rating } from "@smastrom/react-rating";
+import { getTotalItemsInCart, MAX_CART_SIZE, MAX_ITEM_COUNT } from "../helpers.js";
 import classes from "../styles/Product.module.css";
+import { toast } from "react-toastify";
 
 function Product() {
-    const { id } = useParams();
+    const id = +useParams().id;
     const [data, setData] = useState(null);
     const [count, setCount] = useState(1);
+    const [cart, setCart] = useOutletContext();
 
     function handleAdd() {
         const result = count + 1;
 
-        if (result <= 10) {
+        if (result <= MAX_ITEM_COUNT) {
             setCount(result);
         }
     }
@@ -23,6 +26,36 @@ function Product() {
         if (result >= 1) {
             setCount(result);
         }
+    }
+
+    function handleAddToCart() {
+        if (getTotalItemsInCart(cart) + count > MAX_CART_SIZE) {
+            toast.error("Cart is full");
+
+            return;
+        }
+
+        const cartItemCount = cart.find((item) => item.id === id)?.count;
+
+        if (cartItemCount && cartItemCount + count > MAX_ITEM_COUNT) {
+            toast.error("You can't have more of this item");
+
+            return;
+        }
+
+        setCart((draft) => {
+            const cartItem = draft.find((item) => item.id === id);
+
+            if (cartItem) {
+                cartItem.count += count;
+
+                return;
+            }
+
+            draft.push({ id, count });
+        });
+
+        toast.success(`Added ${count} ${count > 1 ? "item's" : "item"} to cart`);
     }
 
     useEffect(() => {
@@ -81,7 +114,7 @@ function Product() {
                                     <Plus alt="add" />
                                 </button>
                             </div>
-                            <button className={classes.addToCart}>
+                            <button className={classes.addToCart} onClick={handleAddToCart}>
                                 <ShoppingCartSimple size={24} /> Add to cart
                             </button>
                         </div>
