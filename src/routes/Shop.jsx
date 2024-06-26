@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
 import Categories from "../components/Categories";
 import classes from "../styles/Shop.module.css";
 
@@ -9,7 +9,7 @@ function Shop() {
                 <Categories />
             </div>
             <div className={classes.products}>
-                <Outlet />
+                <Outlet context={useOutletContext()} />
             </div>
         </div>
     );
