@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    height: 100%;
+    padding: 20px;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    width: 100%;
+    gap: 20px;
+}
+
+.checkout {
+    height: min-content;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.199);
+}
+
+.order {
+    border: none;
+    background-color: #27272a;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.order:hover {
+    background-color: #a1a1aa;
+    cursor: pointer;
+}
+
+.loading {
+    color: #a1a1aa;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
