@@ -22,7 +22,7 @@ function ProductCard({ title, image, price, rating, handleAddToCart, id}) {
                     />
                     <div aria-label={`Rating count ${rating.count}`}>{rating.count}</div>
                 </div>
-                <div className={classes.price}>${price}</div>
+                <div className={classes.price}>${price.toFixed(2)}</div>
                 <button className={classes.cart} onClick={handleAddToCart}><ShoppingCartSimple size={24}/>Add to cart</button>
             </div>
         </section>
