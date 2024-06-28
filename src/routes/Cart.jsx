@@ -41,7 +41,9 @@ function Cart() {
                             id: item.id,
                         })),
                     ),
-                () => {},
+                () => {
+                    /* Ignore promise rejection */
+                },
             );
 
         return () => abortController.abort();
@@ -52,7 +54,7 @@ function Cart() {
     function handleAdd(id) {
         const newCount = cart.find((item) => item.id === id).count + 1;
 
-        if (getTotalItemsInCart(cart) > MAX_CART_SIZE) return;
+        if (getTotalItemsInCart(cart) === MAX_CART_SIZE) return;
 
         if (newCount > MAX_ITEM_COUNT) return;
 
