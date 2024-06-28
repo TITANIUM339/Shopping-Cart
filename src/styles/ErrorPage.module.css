@@ -1,15 +1,35 @@
 .container {
     height: 100dvh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 20px;
+}
+
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .error {
     color: red;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 5px;
+}
+
+.back {
+    margin-top: 20px;
+    display: block;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    background-color: #27272a;
+    color: white !important;
+}
+
+.back:hover {
+    background-color: #a1a1aa;
 }
