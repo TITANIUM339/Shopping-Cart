@@ -45,7 +45,9 @@
     color: white;
 }
 
-.cart:hover {
-    background-color: #a1a1aa;
-    cursor: pointer;
+@media (hover: hover) {
+    .cart:hover {
+        background-color: #a1a1aa;
+        cursor: pointer;
+    }
 }

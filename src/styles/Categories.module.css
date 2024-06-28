@@ -19,10 +19,8 @@
     border-radius: 5px;
 }
 
-.link:hover {
-    background-color: #a1a1aa;
-}
-
-.active {
-    background-color: #a1a1aa;
+@media (hover: hover) {
+    .link:hover {
+        background-color: #a1a1aa;
+    }
 }

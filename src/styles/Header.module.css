@@ -39,19 +39,21 @@
     position: relative;
 }
 
-.home:hover {
-    text-decoration: underline;
-    text-underline-offset: 6px;
-    text-decoration-thickness: 2px;
-    color: var(--hover);
-}
+@media (hover: hover) {
+    .home:hover {
+        text-decoration: underline;
+        text-underline-offset: 6px;
+        text-decoration-thickness: 2px;
+        color: var(--hover);
+    }
 
-.shop {
-    composes: home;
-}
+    .shop {
+        composes: home;
+    }
 
-.cart:hover {
-    color: var(--hover);
+    .cart:hover {
+        color: var(--hover);
+    }
 }
 
 .cartItemsCount {
