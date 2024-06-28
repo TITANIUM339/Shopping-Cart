@@ -12,6 +12,7 @@ import Shop from "./routes/Shop.jsx";
 import Cart from "./routes/Cart.jsx";
 import Products from "./routes/Products.jsx";
 import Product from "./routes/Product.jsx";
+import "../404.html?raw";
 
 const router = createBrowserRouter(
     [
