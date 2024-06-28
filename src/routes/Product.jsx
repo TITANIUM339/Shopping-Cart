@@ -2,7 +2,11 @@ import { useOutletContext, useParams } from "react-router-dom";
 import { Spinner, Plus, Minus, ShoppingCartSimple } from "phosphor-react";
 import { useEffect, useState } from "react";
 import { Rating } from "@smastrom/react-rating";
-import { getTotalItemsInCart, MAX_CART_SIZE, MAX_ITEM_COUNT } from "../helpers.js";
+import {
+    getTotalItemsInCart,
+    MAX_CART_SIZE,
+    MAX_ITEM_COUNT,
+} from "../helpers.js";
 import classes from "../styles/Product.module.css";
 import { toast } from "react-toastify";
 
@@ -14,7 +18,7 @@ function Product() {
     const [error, setError] = useState(null);
 
     if (error) {
-        throw new Error(error)
+        throw new Error(error);
     }
 
     function handleAdd() {
@@ -60,7 +64,9 @@ function Product() {
             draft.push({ id, count });
         });
 
-        toast.success(`Added ${count} ${count > 1 ? "item's" : "item"} to cart`);
+        toast.success(
+            `Added ${count} ${count > 1 ? "item's" : "item"} to cart`,
+        );
     }
 
     useEffect(() => {
@@ -72,8 +78,14 @@ function Product() {
             mode: "cors",
             signal: abortController.signal,
         })
-            .then((result) => result.json(), () => {/* Ignore promise rejection */})
-            .then((data) => setData(data)).catch(() => setError("bad url"));
+            .then(
+                (result) => result.json(),
+                () => {
+                    /* Ignore promise rejection */
+                },
+            )
+            .then((data) => setData(data))
+            .catch(() => setError("bad url"));
 
         return () => abortController.abort();
     }, [id]);
@@ -119,7 +131,10 @@ function Product() {
                                     <Plus alt="add" />
                                 </button>
                             </div>
-                            <button className={classes.addToCart} onClick={handleAddToCart}>
+                            <button
+                                className={classes.addToCart}
+                                onClick={handleAddToCart}
+                            >
                                 <ShoppingCartSimple size={24} /> Add to cart
                             </button>
                         </div>

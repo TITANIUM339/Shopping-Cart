@@ -2,7 +2,14 @@ import PropTypes from "prop-types";
 import { Plus, Minus } from "phosphor-react";
 import classes from "../styles/ProductList.module.css";
 
-function ProductList({title, image, count, price, handleAdd, handleSubtract}) {
+function ProductList({
+    title,
+    image,
+    count,
+    price,
+    handleAdd,
+    handleSubtract,
+}) {
     return (
         <section className={classes.container}>
             <div>
@@ -21,7 +28,9 @@ function ProductList({title, image, count, price, handleAdd, handleSubtract}) {
                         <Plus alt="add" />
                     </button>
                 </div>
-                <div className={classes.price}>${(price * count).toFixed(2)}</div>
+                <div className={classes.price}>
+                    ${(price * count).toFixed(2)}
+                </div>
             </div>
         </section>
     );
@@ -34,6 +43,6 @@ ProductList.propTypes = {
     price: PropTypes.number.isRequired,
     handleAdd: PropTypes.func.isRequired,
     handleSubtract: PropTypes.func.isRequired,
-}
+};
 
 export default ProductList;

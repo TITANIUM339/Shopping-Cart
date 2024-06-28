@@ -4,7 +4,7 @@ import { Rating } from "@smastrom/react-rating";
 import classes from "../styles/ProductCard.module.css";
 import { ShoppingCartSimple } from "phosphor-react";
 
-function ProductCard({ title, image, price, rating, handleAddToCart, id}) {
+function ProductCard({ title, image, price, rating, handleAddToCart, id }) {
     return (
         <section className={classes.container}>
             <div>
@@ -20,10 +20,15 @@ function ProductCard({ title, image, price, rating, handleAddToCart, id}) {
                         value={rating.rate}
                         readOnly
                     />
-                    <div aria-label={`Rating count ${rating.count}`}>{rating.count}</div>
+                    <div aria-label={`Rating count ${rating.count}`}>
+                        {rating.count}
+                    </div>
                 </div>
                 <div className={classes.price}>${price.toFixed(2)}</div>
-                <button className={classes.cart} onClick={handleAddToCart}><ShoppingCartSimple size={24}/>Add to cart</button>
+                <button className={classes.cart} onClick={handleAddToCart}>
+                    <ShoppingCartSimple size={24} />
+                    Add to cart
+                </button>
             </div>
         </section>
     );
@@ -35,7 +40,7 @@ ProductCard.propTypes = {
     price: PropTypes.number.isRequired,
     rating: PropTypes.object.isRequired,
     handleAddToCart: PropTypes.func.isRequired,
-    id: PropTypes.number.isRequired
-}
+    id: PropTypes.number.isRequired,
+};
 
 export default ProductCard;

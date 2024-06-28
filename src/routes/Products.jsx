@@ -4,7 +4,11 @@ import ProductCard from "../components/ProductCard.jsx";
 import classes from "../styles/Products.module.css";
 import { Spinner } from "phosphor-react";
 import { useOutletContext } from "react-router-dom";
-import { getTotalItemsInCart, MAX_CART_SIZE, MAX_ITEM_COUNT } from "../helpers.js";
+import {
+    getTotalItemsInCart,
+    MAX_CART_SIZE,
+    MAX_ITEM_COUNT,
+} from "../helpers.js";
 import { toast } from "react-toastify";
 
 function Products({ category = "all" }) {
@@ -14,11 +18,10 @@ function Products({ category = "all" }) {
     function handleAddToCart(id) {
         if (getTotalItemsInCart(cart) === MAX_CART_SIZE) {
             toast.error("Cart is full");
-            
+
             return;
         }
 
-        
         const cartItemCount = cart.find((item) => item.id === id)?.count;
 
         if (cartItemCount && cartItemCount === MAX_ITEM_COUNT) {
@@ -36,7 +39,7 @@ function Products({ category = "all" }) {
                 return;
             }
 
-            draft.push({id, count: 1});
+            draft.push({ id, count: 1 });
         });
 
         toast.success("Item added to cart");

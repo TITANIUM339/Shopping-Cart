@@ -21,7 +21,9 @@ beforeEach(() => {
 
 describe("renders expected elements", () => {
     test("renders title", () => {
-        expect(screen.getByRole("heading", {name: "test"})).toBeInTheDocument();
+        expect(
+            screen.getByRole("heading", { name: "test" }),
+        ).toBeInTheDocument();
     });
 
     test("renders image", () => {
@@ -33,11 +35,13 @@ describe("renders expected elements", () => {
     });
 
     test("renders add button", () => {
-        expect(screen.getByRole("button", {name: "add"})).toBeInTheDocument();
+        expect(screen.getByRole("button", { name: "add" })).toBeInTheDocument();
     });
 
     test("renders remove button", () => {
-        expect(screen.getByRole("button", {name: "remove"})).toBeInTheDocument();
+        expect(
+            screen.getByRole("button", { name: "remove" }),
+        ).toBeInTheDocument();
     });
 
     test("renders price", () => {

@@ -131,7 +131,12 @@ function Cart() {
                                 )
                                 .toFixed(2)}
                         </div>
-                        <button onClick={handlePlaceOrder} className={classes.order}>Place order</button>
+                        <button
+                            onClick={handlePlaceOrder}
+                            className={classes.order}
+                        >
+                            Place order
+                        </button>
                     </section>
                 </>
             ) : (
