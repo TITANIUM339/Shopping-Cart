@@ -13,41 +13,44 @@ import Cart from "./routes/Cart.jsx";
 import Products from "./routes/Products.jsx";
 import Product from "./routes/Product.jsx";
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Root />,
-        errorElement: <ErrorPage />,
-        children: [
-            { index: true, element: <Home /> },
-            {
-                path: "shop",
-                element: <Shop />,
-                children: [
-                    { index: true, element: <Products /> },
-                    {
-                        path: "jewelry",
-                        element: <Products category="jewelry" />,
-                    },
-                    {
-                        path: "electronics",
-                        element: <Products category="electronics" />,
-                    },
-                    {
-                        path: "mens-clothing",
-                        element: <Products category="mens-clothing" />,
-                    },
-                    {
-                        path: "womens-clothing",
-                        element: <Products category="womens-clothing" />,
-                    },
-                ],
-            },
-            { path: "cart", element: <Cart /> },
-            { path: "product/:id", element: <Product /> },
-        ],
-    },
-]);
+const router = createBrowserRouter(
+    [
+        {
+            path: "/",
+            element: <Root />,
+            errorElement: <ErrorPage />,
+            children: [
+                { index: true, element: <Home /> },
+                {
+                    path: "shop",
+                    element: <Shop />,
+                    children: [
+                        { index: true, element: <Products /> },
+                        {
+                            path: "jewelry",
+                            element: <Products category="jewelry" />,
+                        },
+                        {
+                            path: "electronics",
+                            element: <Products category="electronics" />,
+                        },
+                        {
+                            path: "mens-clothing",
+                            element: <Products category="mens-clothing" />,
+                        },
+                        {
+                            path: "womens-clothing",
+                            element: <Products category="womens-clothing" />,
+                        },
+                    ],
+                },
+                { path: "cart", element: <Cart /> },
+                { path: "product/:id", element: <Product /> },
+            ],
+        },
+    ],
+    { basename: "/Shopping-Cart/" },
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
