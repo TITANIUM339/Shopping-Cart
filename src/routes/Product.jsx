@@ -11,6 +11,11 @@ function Product() {
     const [data, setData] = useState(null);
     const [count, setCount] = useState(1);
     const [cart, setCart] = useOutletContext();
+    const [error, setError] = useState(null);
+
+    if (error) {
+        throw new Error(error)
+    }
 
     function handleAdd() {
         const result = count + 1;
@@ -68,7 +73,7 @@ function Product() {
             signal: abortController.signal,
         })
             .then((result) => result.json(), () => {/* Ignore promise rejection */})
-            .then((data) => setData(data));
+            .then((data) => setData(data)).catch(() => setError("bad url"));
 
         return () => abortController.abort();
     }, [id]);
