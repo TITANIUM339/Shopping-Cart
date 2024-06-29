@@ -35,9 +35,11 @@
     padding: 5px;
 }
 
-.order:hover {
-    background-color: #a1a1aa;
-    cursor: pointer;
+@media (hover: hover) {
+    .order:hover {
+        background-color: #a1a1aa;
+        cursor: pointer;
+    }
 }
 
 .loading {
